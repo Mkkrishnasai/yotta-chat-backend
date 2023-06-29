@@ -8,7 +8,7 @@ export class WebSocketAdapter extends IoAdapter {
     const server = super.createIOServer(port, options);
 
     server.listen(process.env.WEBSOCKET_PORT);
-
+  
     return server;
   }
 }

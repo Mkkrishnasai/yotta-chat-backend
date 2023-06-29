@@ -5,7 +5,7 @@ import { Server, Socket } from 'socket.io';
 import { WebSocketAuthGuard } from 'src/auth/websocketAuth.guard';
 import { UsersService } from 'src/users/users.service';
 
-@WebSocketGateway({ cors: '*:*' })
+@WebSocketGateway(+process.env.WEBSOCKET_PORT, { cors: '*' })
 export class ChatGateway {
 
   constructor(@Inject(UsersService)private readonly userService: UsersService,private readonly jwtServ: JwtService){}
